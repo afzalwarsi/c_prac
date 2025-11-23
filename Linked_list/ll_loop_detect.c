@@ -1,24 +1,5 @@
-// Middle = fast moves 2x
-// 1/3rd = fast moves 3x
-// 1/4th = fast moves 4x
+// Code to find a loop in linked list 
 
-// So the slow pointer moves one step, fast pointer moves three or four steps.
-// Slow pointer’s position when fast pointer hits the end gives 1/3rd or 1/4th.
-
-// ❗ Why does this work?
-
-// Think of a linked list as a racetrack.
-
-// Slow = speed 1
-// Fast = speed K (K = 2, 3, 4...)
-
-// When the fast runner finishes the race, slow runner has completed 1/K of it.
-
-// Example with length = 12:
-
-
-// Code to find  a linked list 1/3, 1/4 etc  element
-//approach: move fast pointer 3x or 4x than slow pointer
 //Create some nodes first (create node push it and than find middle using function)
 
 #include <stdio.h>
@@ -30,23 +11,7 @@ struct node {
 };
 // ------------------------------------------
 
-// ------Find middle of linked list function --------------------
-// return middle element: via slow, fast pointer
-struct node* middle_element(struct node *head)
-{
-    struct node*slow=head;
-    struct node*fast=head;
-    while(fast!=NULL && fast->next!=NULL && fast->next->next!=NULL) // note more condition added for fast->next
-    {
-        slow=slow->next;
-        // fast=fast->next->next; // for middle
-        fast=fast->next->next->next; // for 1/3rd
-        // fast=fast->next->next->next->next; // for 1/4th
-    }
-    return slow;
-    
-    
-}
+// ------Find Loop in linked list: function --------------------
 
 
 // ------------------------------------------------------------
@@ -105,26 +70,9 @@ push_front(&head,7);
 push_front(&head,8);
 push_front(&head,9);
   print_list(head);
-  
-  struct node*middle= middle_element(head); // this return slow pointer
-  printf("\n 1/3rd Element Pointer is %p",middle);
-  printf("\n 1/3rd Element value  is %d",(*middle).data);
-  
 
   return 0;
 }
 
-git add ll_find_node_1by3_1by4.c
-git add ll_loop_detect.c
-git commit -m "Added 1/3 logic and loop detection"
-git push origin main
-
-
 
 // O/P: 
-
-// Linked list is: 9-->8-->7-->6-->5-->4-->3-->2-->1-->
-// Middle Element Pointer is 0x57d0084249b0
-// Middle Element value  is 6
-
-
