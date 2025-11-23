@@ -1,6 +1,13 @@
 // Code to find a loop in linked list 
+//⭐ PART 2 — Floyd’s Cycle Detection Algorithm
+//This is basically the “two runners on a circular track” philosophy.
+
+// Why does this work?
+// Imagine two runners on a circular track.
+// If one runs faster, they will eventually catch the slower one, no matter where they started.
 
 //Create some nodes first (create node push it and than find middle using function)
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,7 +19,22 @@ struct node {
 // ------------------------------------------
 
 // ------Find Loop in linked list: function --------------------
-
+ struct node* detect_loop(struct node* head)
+ {
+     //loop when slow meets head. as if loop means circular so will meets
+     struct node* slow=head;
+     struct node* fast=head;
+     while(fast!=NULL && fast->next!=NULL)
+     {
+         slow=slow->next;
+         fast= fast->next->next;
+         
+         if(slow==fast)
+         return slow; // meeting loop
+        
+     }
+        return NULL; // no loop find   
+ }
 
 // ------------------------------------------------------------
 
@@ -66,13 +88,40 @@ push_front(&head,3);
 push_front(&head,4);
 push_front(&head,5);
 push_front(&head,6);
-push_front(&head,7);
+push_front(&head,2);
 push_front(&head,8);
 push_front(&head,9);
-  print_list(head);
+ print_list(head);
+
+ // Create a loop
+    struct node* temp = head;
+ 
+//  while (temp->next->next != NULL)
+//         temp = temp->next;   // reach  2nd last node
+
+    while (temp->next != NULL)
+        temp = temp->next;   // reach last node
+
+    temp->next = head->next->next;   // loop back to 3rd node
+
+    struct node* loop = detect_loop(head);
+
+    if (loop)
+        printf("\nLoop detected at node with data: %d\n", loop->data);
+    else
+        printf("\nNo loop found\n");
+
 
   return 0;
 }
 
 
 // O/P: 
+
+// Linked list is: 9-->8-->2-->6-->5-->4-->3-->2-->1-->
+// Loop detected at node with data: 3
+
+//next comment output
+
+// Linked list is: 9-->8-->2-->6-->5-->4-->3-->2-->1-->
+// Loop detected at node with data: 2
