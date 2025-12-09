@@ -114,10 +114,6 @@ push_front(&head,9);
   return 0;
 }
 
-git add ll_find_node_1by3_1by4.c
-git add ll_loop_detect.c
-git commit -m "Added 1/3 logic and loop detection"
-git push origin main
 
 
 

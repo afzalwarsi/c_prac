@@ -8,7 +8,6 @@
 
 //Create some nodes first (create node push it and than find middle using function)
 
-
 #include <stdio.h>
 #include <stdlib.h>
 //--- Definition of the linked list node ---

@@ -1,0 +1,79 @@
+1. Reverse a linked list (iterative + recursive)
+
+Classic test of pointer anatomy. Interviewers adore watching you juggle prev, curr, and next.
+
+2. Detect and remove loop in linked list (Floyd’s Cycle algorithm)
+
+Shows fluency with fast/slow pointers; you’ve been working on this already.
+
+3. Implement your own strlen(), strcpy(), strcmp()
+
+Tests pointer arithmetic and string termination logic.
+
+4. Reverse a string in place
+
+Mutating arrays safely without losing the null terminator.
+
+5. Count bits set to 1 in an integer (population count)
+
+Good test of bitwise operators. Variants: count trailing zeros, isolate lowest set bit.
+
+6. Swap two integers without a temporary variable
+
+Usually done with XOR. Interviewers use this to check bitwise comfort, not to torture you.
+
+7. Implement a simple circular buffer
+
+Embedded gold. Used in UART, audio buffering (ToneTag), BLE stacks.
+
+8. Debouncing logic simulation (in C)
+
+They may not ask full hardware debounce, but state-machine logic is common.
+
+9. Implement a state machine (Moore/Mealy)
+
+Every embedded profile uses state machines eventually.
+
+10. Find endianness of the system
+
+Write a small snippet using a pointer cast to test little vs big endian.
+
+11. Reverse bits of an 8-bit/32-bit integer
+
+Shows bit manipulation precision.
+
+12. Implement memcpy(), memset(), or memmove()
+
+Demands pointer increment/decrement, overlap handling (memmove).
+
+13. Remove duplicates from an array (in-place)
+
+Tests array manipulation without malloc.
+
+14. Implement a simple stack and queue using arrays
+
+Fixed-size buffers → classic embedded constraint.
+
+15. Check if a number is power of 2
+
+One-line bitwise trick.
+
+16. Find missing number in array
+
+Often asked in C rounds as a check on XOR reasoning.
+
+17. Write a function to compute CRC-8 or checksum
+
+Medium difficulty; relevant to IoT and communication protocols.
+
+18. Implement binary search
+
+Tests correctness, boundary handling, integer overflow (mid calculation).
+
+19. Design a lightweight scheduler
+
+Sometimes they ask an extremely small cooperative scheduler using function pointers.
+
+20. Implement your own atoi() and itoa()
+
+Bound checking + arithmetic + ASCII handling.
